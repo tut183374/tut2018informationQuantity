@@ -48,7 +48,7 @@ public class TestCase {
 		}
 		
 	    myObject = new s4.B183374.Frequencer();
-	    myObject.setSpace();
+	    myObject.setSpace("".getBytes());
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
@@ -57,11 +57,11 @@ public class TestCase {
 		} else {
 			System.out.println("WRONG");
 		}
-		
+		/*
 		myObject.setTarget();
 		freq = myObject.frequency();
 		System.out.print(freq);
-		
+		*/
 		myObject.setSpace("Hi Ho Hi Ho".getBytes());
 		myObject.setTarget("".getBytes());
 		freq = myObject.frequency();
