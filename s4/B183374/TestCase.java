@@ -35,9 +35,20 @@ public class TestCase {
 	    FrequencerInterface  myObject;
 		int freq;
 		//byte[] test = null;
-	    System.out.println("checking s4.B183374.Frequencer");
+		System.out.println("checking s4.B183374.Frequencer");
+		myObject = new s4.B183374.Frequencer();
+		myObject.setSpace("Hi Ho Hi Ho".getBytes());
+		myObject.setTarget("H".getBytes());
+		freq = myObject.frequency();
+		System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears " + freq + " times. ");
+		if (4 == freq) {
+			System.out.println("OK");
+		} else {
+			System.out.println("WRONG");
+		}
+		
 	    myObject = new s4.B183374.Frequencer();
-	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+	    myObject.setSpace();
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
@@ -46,14 +57,13 @@ public class TestCase {
 		} else {
 			System.out.println("WRONG");
 		}
-		/*
+		
 		myObject.setTarget();
 		freq = myObject.frequency();
 		System.out.print(freq);
-		*/
+		
 		myObject.setSpace("Hi Ho Hi Ho".getBytes());
 		myObject.setTarget("".getBytes());
-		System.out.println("".getBytes().length);
 		freq = myObject.frequency();
 		System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears " + freq + " times. ");
 		if (4 == freq) {
