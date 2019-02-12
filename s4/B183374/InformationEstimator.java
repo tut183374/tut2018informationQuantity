@@ -46,14 +46,13 @@ public class InformationEstimator implements InformationEstimatorInterface{
 	
 	public double estimation(){
 		myFrequencer.setTarget(myTarget);
-		double value,value1 = 0.0;
+		double value = Double.MAX_VALUE,value1 = 0.0;
 		double [] myEstimation = new double [myTarget.length + 1];
 		for(int n=1; n<=myTarget.length; n++){
-			value = Double.MAX_VALUE; // value = mininimum of each "value1".
 			for(int start=n-1; start>=0; start--) {
 				int hoge = myFrequencer.subByteFrequency(start, n);
 				value1 = myEstimation[start]+iq(hoge);
-				if(value>value1) value = value1;
+				value = value >  value1 ? value1 : value1; 
 			}
 			myEstimation[n] = value;
 		}
